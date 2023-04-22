@@ -14,6 +14,14 @@
     --red5: #dc2626;
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 700,
+  'GRAD' 200,
+  'opsz' 48
+}
+
 body {
     font-family: 'Mukta', sans-serif;
     background-color: var(--teal1);
@@ -49,16 +57,6 @@ a {
 
 .head {
     font-size: 3rem;
-}
-
-.link {
-    transition: all 200ms ease-in-out;
-}
-
-.link:hover {
-    cursor: pointer;
-    color: var(--red5);
-    transition-duration: 200ms;
 }
 
 .btnOpenModal {
@@ -112,14 +110,16 @@ a {
 .modal {
     background-color: var(--red3);
     border: 10px solid var(--red4);
-    width: 25em;
-    height: 18em;
+    width: 22em;
+    height: 18.5em;
     display: flex;
-    border-radius: 3%;
+    border-radius: 20px;
     z-index: 2;
     position: fixed;
     margin-top: 7em;
 }
+
+
 
 .closeModal {
     margin: 1em;
@@ -132,13 +132,22 @@ a {
     gap: 15px;
 }
 
+.modal-content h3, .read {
+    margin-left: 0.8em;
+}
+
+.modal-content h3 {
+    margin-bottom: 0;
+}
+
 .form {
     display: flex;
-    justify-content: space-between;
+    margin-top: 0;
 }
 
 .text-input {
     width: 14em;
+    height: 1.5em;
     margin-left: 10px;
     border-radius: 20px;
     background-color: var(--teal1);
@@ -150,14 +159,22 @@ a {
     border: 2px solid var(--red5);
 }
 
+.checkbox {
+    width: 20px;
+    height: 20px;
+    margin-top: 4px;
+    accent-color: var(--teal1);
+    color: var(--teal1);
+    cursor: pointer;
+}
+
 .buttonSubmit {
     display: flex;
     justify-content: center;
 }
 
 .btnSubmit {
-    margin-top: 0.5em;
-    margin-left: -2em;
+    margin-left: -1.5em;
 }
 
 .btnSubmit, .btnCloseModal {
@@ -168,8 +185,6 @@ a {
     border: 4px solid var(--teal4);
     transition: all 250ms ease-in-out;
     color: var(--teal5);
-    font-size: 1.5em;
-
 }
 
 .btnSubmit:hover, .btnCloseModal:hover {
