@@ -34,6 +34,7 @@ btnSubmit.addEventListener('click', function(event){
     event.preventDefault();
     addBookToLibrary();
     closeModal();
+   
 });
 
 // --- --- BOOK --- ---
@@ -57,11 +58,11 @@ function makeBookCard(){
         bookCard.innerHTML = 
         `<div class="card">
             <div class="buttonCard">
-                <button class="btnDel"><span class="material-symbols-outlined">delete</span></button>
-                <button class="btnRead"><span class="material-symbols-outlined">toggle_on</span></button>
+                <button class="btnDel" onclick="delBook(${i})"><span class="material-symbols-outlined">delete</span></button>
+                <button class="btnRead"><span class="material-symbols-outlined">done</span></button>
             </div>
             <div class="book">
-                <p class="title">${book.title}</p>
+                <p class="title">"${book.title}"</p>
                 <p class="author">by ${book.author}</p>
                 <p class="pages">${book.pages} pages</p>
             </div>
@@ -79,3 +80,28 @@ function addBookToLibrary() {
     myLibrary.push(newBook);
     makeBookCard();
 }
+
+function delBook(index){
+    myLibrary.splice(index, 1);
+    makeBookCard();
+}
+
+
+// non funziona
+const btnRead = document.querySelector('.btnRead');
+btnRead.addEventListener('click', isRead)
+
+function isRead(){
+    btnRead.classList.add('active');
+}
+
+/* function isRead(){
+    const checkBox = document.getElementById('read');
+    const btnRead = document.querySelector('.btnRead');
+    if (checkBox.checked == true){
+        btnRead.classList.add('active');
+    }
+    else{
+        return;
+    }
+} */
