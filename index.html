@@ -18,7 +18,7 @@
 
 
         <div class="content">
-        <!--<div class="card">
+        <!-- <div class="card">
                 <div class="buttonCard">
                     <button class="btnDel"><span class="material-symbols-outlined">delete</span></button>
                     <button class="btnRead"><span class="material-symbols-outlined">done</span></button>
@@ -28,7 +28,7 @@
                     <p class="author">by Frank Herbert</p>
                     <p class="pages">896 pages</p>
                 </div>
-            </div>-->
+            </div> -->
         </div>
 
         <div class="modalDiv">
@@ -36,23 +36,23 @@
                 <div class="closeModal">
                     <button class="btnCloseModal"><span class="material-symbols-outlined">close</span></button>
                 </div>
-                <form action="#" id="form" class="modal-content">
+                <form action="#" id="form" class="modal-content" method="GET">
                     <h3>Add Book</h3>
                     <div class="form">
-                        <input type="text"  class="text-input" id="text-title" placeholder="Title">
+                        <input type="text"  class="text-input" id="text-title" placeholder="Title" autocomplete="off" required />
                     </div>
                     <div class="form">
-                        <input type="text" class="text-input" id="text-author" placeholder="Author">
+                        <input type="text" class="text-input" id="text-author" placeholder="Author" autocomplete="off" required />
                     </div>
                     <div class="form">
-                        <input type="number"  class="text-input" id="text-pages" placeholder="N° of pages">
+                        <input type="number"  class="text-input" id="text-pages" placeholder="N° of pages" autocomplete="off" required />
                     </div>
                     <div class="form read">
                         <label for="read">Have you read it?</label>
-                        <input class="checkbox" type="checkbox" id="read" onclick="isRead()">
+                        <input class="checkbox" type="checkbox" id="read"/>
                     </div>
                     <div class="buttonSubmit">
-                        <button class="btnSubmit" type="button"><span class="material-symbols-outlined">add</span></button>
+                        <button class="btnSubmit" type="submit"><span class="material-symbols-outlined">add</span></button>
                     </div>
                 </form>
             </section>
@@ -61,6 +61,6 @@
   
     </div>
 
-    <script src="main.js"></script>
+    <script src="main.js"></script> 
 </body>
 </html>

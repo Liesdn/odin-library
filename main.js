@@ -7,6 +7,7 @@ const closeModalBtn = document.querySelector('.btnCloseModal');
 const form = document.getElementById('form');
 const btnSubmit = document.querySelector('.btnSubmit');
 
+
 function openModal(){
     modal.classList.remove('hidden');
     overlay.classList.remove('hidden');
@@ -30,7 +31,7 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
-btnSubmit.addEventListener('click', function(event){
+form.addEventListener('submit', function(event){
     event.preventDefault();
     addBookToLibrary();
     closeModal();
@@ -69,6 +70,42 @@ function makeBookCard(){
         </div>`;
         content.appendChild(bookCard);
     }
+
+    const btnRead = document.querySelectorAll('.btnRead');
+    btnRead.forEach((item)=>{
+        item.addEventListener('click', function(){
+            isRead(item);
+        })
+    });
+    
+
+    function isRead(clickedBtn){
+        if(clickedBtn.classList.contains('active')){
+            clickedBtn.classList.remove('active');
+        }        
+        else{
+            clickedBtn.classList.add('active');
+        }
+    }
+
+    function isChecked(){
+        const checkBox = document.getElementById('read');
+        const btnRead = document.querySelector('.btnRead');
+        if (checkBox.checked){
+            btnRead.classList.add('active');
+        }
+        else{
+            btnRead.classList.remove('active');
+        }
+    }
+    
+    const checkBox = document.getElementById('read');
+    checkBox.addEventListener('change', isChecked);
+}
+
+function delBook(index){
+    myLibrary.splice(index, 1);
+    makeBookCard();
 }
 
 function addBookToLibrary() {
@@ -80,28 +117,3 @@ function addBookToLibrary() {
     myLibrary.push(newBook);
     makeBookCard();
 }
-
-function delBook(index){
-    myLibrary.splice(index, 1);
-    makeBookCard();
-}
-
-
-// non funziona
-const btnRead = document.querySelector('.btnRead');
-btnRead.addEventListener('click', isRead)
-
-function isRead(){
-    btnRead.classList.add('active');
-}
-
-/* function isRead(){
-    const checkBox = document.getElementById('read');
-    const btnRead = document.querySelector('.btnRead');
-    if (checkBox.checked == true){
-        btnRead.classList.add('active');
-    }
-    else{
-        return;
-    }
-} */
